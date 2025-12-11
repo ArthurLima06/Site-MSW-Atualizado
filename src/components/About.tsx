@@ -1,84 +1,106 @@
-import { Award, Users, Clock, Shield } from 'lucide-react';
+import { CheckCircle, Users, Truck, Shield, Award } from "lucide-react";
 
 const About = () => {
   const features = [
     {
-      icon: Award,
-      title: 'Qualidade Garantida',
-      description: 'Equipamentos modernos e constantemente revisados',
+      icon: <Shield className="w-6 h-6" />,
+      title: "Segurança Garantida",
+      description: "Todos os equipamentos passam por rigorosa manutenção preventiva.",
     },
     {
-      icon: Users,
-      title: 'Equipe Especializada',
-      description: 'Profissionais qualificados para melhor atendê-lo',
+      icon: <Truck className="w-6 h-6" />,
+      title: "Entrega Pontual",
+      description: "Compromisso com prazos e logística eficiente em toda região.",
     },
     {
-      icon: Clock,
-      title: 'Disponibilidade Total',
-      description: 'Atendimento ágil e suporte quando você precisar',
+      icon: <Users className="w-6 h-6" />,
+      title: "Suporte Especializado",
+      description: "Equipe técnica disponível para auxiliar em qualquer necessidade.",
     },
     {
-      icon: Shield,
-      title: 'Segurança em Primeiro Lugar',
-      description: 'Todas as normas de segurança são rigorosamente seguidas',
+      icon: <Award className="w-6 h-6" />,
+      title: "Qualidade Premium",
+      description: "Equipamentos de primeira linha das melhores marcas do mercado.",
     },
   ];
 
-  return (
-    <section id="sobre" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
-            Sobre a <span className="text-green-600">MSW</span>
-          </h2>
-          <p className="text-lg text-gray-600 leading-relaxed text-justify">
-            A MSW Locação de Veículos e Equipamentos é referência no mercado de locação
-            de máquinas para construção civil. Com anos de experiência, oferecemos
-            soluções completas para obras de todos os portes, sempre com foco em
-            qualidade, eficiência e satisfação do cliente.
-          </p>
-        </div>
+  const benefits = [
+    "Frota moderna e diversificada",
+    "Manutenção preventiva constante",
+    "Operadores treinados disponíveis",
+    "Atendimento personalizado",
+    "Preços competitivos",
+    "Flexibilidade nos contratos",
+  ];
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
+  return (
+    <section id="sobre" className="py-24 bg-background relative overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/50 to-transparent" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div>
+              <span className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-semibold mb-4">
+                Sobre a MSW
+              </span>
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 section-title">
+                Excelência em Locação de Equipamentos
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed text-justify">
+                A <strong className="text-foreground">MSW Locação de Máquinas e Equipamentos</strong> é uma empresa 
+                especializada em fornecer soluções completas para o setor de construção civil. 
+                Com mais de uma década de experiência, nos destacamos pela qualidade dos nossos 
+                equipamentos e pelo atendimento personalizado aos nossos clientes.
+              </p>
+            </div>
+
+            {/* Benefits List */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-accent/50 hover:bg-accent transition-colors"
+                >
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-foreground font-medium">{benefit}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-6 pt-8 border-t border-border">
+              <div className="text-center">
+                <p className="text-4xl font-bold text-primary mb-1">5+</p>
+                <p className="text-sm text-muted-foreground">Anos de Experiência</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-bold text-primary mb-1">100%</p>
+                <p className="text-sm text-muted-foreground">Clientes Satisfeitos</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Feature Cards */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-center group"
+                className="card-3d bg-card p-6 rounded-2xl shadow-md border border-border/50 hover:border-primary/30 transition-all duration-300"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6 group-hover:bg-green-600 transition-colors duration-300">
-                  <Icon className="text-green-600 group-hover:text-white transition-colors duration-300" size={32} />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
+                  {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
+                <h3 className="font-display text-lg font-bold text-foreground mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-            );
-          })}
-        </div>
-
-        <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-3xl p-12 text-white">
-          <h3 className="text-3xl font-bold mb-4 text-center">Por que escolher a MSW?</h3>
-          <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
-            Somos especializados em locação de caminhões munk com guindaste hidráulico.
-            Com profissionais qualificados, equipamentos bem mantidos e atendimento
-            personalizado, garantimos as melhores soluções para sua obra.
-          </p>
-          <div className="flex flex-wrap justify-center gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">Munk</div>
-              <div className="text-green-100">Especialidade</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">Qualidade</div>
-              <div className="text-green-100">Garantida</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">Confiável</div>
-              <div className="text-green-100">Desde 2024</div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
