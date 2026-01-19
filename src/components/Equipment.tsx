@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight, TrendingUp } from "lucide-react";
-import munckTruck from "@/assets/munck.jpeg";
+import munckTruck from "@/assets/munck-truck-new.jpg";
 import constructionSite2 from "@/assets/construction-site-2.jpg";
 import loaderJcb from "@/assets/loader-jcb.jpg";
 
