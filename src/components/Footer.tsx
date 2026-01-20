@@ -79,7 +79,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-background/70">Endereço</p>
-                  <p>R José Martins Coelho 140 - Vila Emir</p>
+                  <p>R José Martins Coelho 140 - Vila Emir (Escritório)</p>
                 </div>
               </li>
             </ul>

@@ -22,7 +22,7 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Endereço",
-      value: "R José Martins Coelho 140 - Vila Emir",
+      value: "R José Martins Coelho 140 - Vila Emir (Escritório)",
       link: "#",
     },
     {
